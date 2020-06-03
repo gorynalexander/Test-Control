@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@id/fragment_lesson"
+        android:title="@string/lesson"
+        android:icon="@drawable/ic_assignment_turned_in_white_24dp"/>
+    <item
+        android:id="@id/fragment_archive"
+        android:title="@string/archive"
+        android:icon="@drawable/ic_archive_white_24dp"/>
+
+    <item
+        android:id="@id/fragment_profile"
+        android:title="@string/profile"
+        android:icon="@drawable/ic_face_white_24dp"/>
+</menu>

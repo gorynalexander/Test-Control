@@ -2,10 +2,31 @@
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/app_graph.xml"
-    app:startDestination="@id/fragment_register">
+    app:startDestination="@id/fragment_welcome">
 
-    <fragment android:id="@+id/fragment_register"
-        android:label="Register"
-        android:name="com.onaft.testme.ui.register.RegistrationFragment"/>
+    <fragment
+        android:id="@+id/fragment_welcome"
+        android:name="com.onaft.testme.ui.welcome.WelcomeFragment"
+        android:label="Welcome" />
+    <fragment
+        android:id="@+id/fragment_register"
+        android:name="com.onaft.testme.ui.register.RegisterFragment"
+        android:label="Register" />
+    <fragment
+        android:id="@+id/fragment_main"
+        android:name="com.onaft.testme.ui.main.MainFragment"
+        android:label="Main" />
 
+    <fragment
+        android:id="@+id/fragment_lesson"
+        android:name="com.onaft.testme.ui.lesson.LessonFragment"
+        android:label="Lesson" />
+    <fragment
+        android:id="@+id/fragment_archive"
+        android:name="com.onaft.testme.ui.archive.ArchiveFragment"
+        android:label="Archive" />
+    <fragment
+        android:id="@+id/fragment_profile"
+        android:name="com.onaft.testme.ui.profile.ProfileFragment"
+        android:label="Profile" />
 </navigation>
