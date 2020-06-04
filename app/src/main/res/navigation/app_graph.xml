@@ -7,26 +7,17 @@
     <fragment
         android:id="@+id/fragment_welcome"
         android:name="com.onaft.testme.ui.welcome.WelcomeFragment"
-        android:label="Welcome" />
+        android:label="Welcome">
+
+    </fragment>
+
     <fragment
         android:id="@+id/fragment_register"
         android:name="com.onaft.testme.ui.register.RegisterFragment"
-        android:label="Register" />
-    <fragment
-        android:id="@+id/fragment_main"
-        android:name="com.onaft.testme.ui.main.MainFragment"
-        android:label="Main" />
+        android:label="Register">
+    </fragment>
 
-    <fragment
-        android:id="@+id/fragment_lesson"
-        android:name="com.onaft.testme.ui.main.lesson.LessonFragment"
-        android:label="Lesson" />
-    <fragment
-        android:id="@+id/fragment_archive"
-        android:name="com.onaft.testme.ui.main.archive.ArchiveFragment"
-        android:label="Archive" />
-    <fragment
-        android:id="@+id/fragment_profile"
-        android:name="com.onaft.testme.ui.main.profile.ProfileFragment"
-        android:label="Profile" />
+    <include app:graph="@navigation/main_graph" />
+
+
 </navigation>

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/main_graph"
+    app:startDestination="@id/fragment_main">
+    <activity
+        android:id="@+id/activity_work"
+        android:name="com.onaft.testme.ui.main.WorkActivity"
+        android:label="Work">
+    </activity>
+
+    <fragment
+        android:id="@+id/fragment_main"
+        android:name="com.onaft.testme.ui.main.MainFragment"
+        android:label="Main" />
+
+    <fragment
+        android:id="@+id/fragment_lesson"
+        android:name="com.onaft.testme.ui.main.lesson.LessonFragment"
+        android:label="Lesson" />
+    <fragment
+        android:id="@+id/fragment_archive"
+        android:name="com.onaft.testme.ui.main.archive.ArchiveFragment"
+        android:label="Archive" />
+    <fragment
+        android:id="@+id/fragment_profile"
+        android:name="com.onaft.testme.ui.main.profile.ProfileFragment"
+        android:label="Profile" />
+</navigation>

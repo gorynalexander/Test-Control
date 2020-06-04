@@ -27,7 +27,7 @@ class RegisterFragment : Fragment() {
 
     private fun initUI() {
         btnSignIn.setOnClickListener {
-            findNavController().navigate(R.id.fragment_main)
+            findNavController().navigate(R.id.main_graph)
         }
     }
 

@@ -8,12 +8,13 @@
     tools:context=".ui.main.MainFragment">
 
     <fragment
-        android:id="@+id/base_container"
         android:name="androidx.navigation.fragment.NavHostFragment"
+        app:navGraph="@navigation/app_graph"
+        app:defaultNavHost="true"
+        android:id="@+id/nav_main_fragment"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="1"
-        app:navGraph="@navigation/app_graph" />
+        android:layout_weight="1" />
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/bottom_navigation"
