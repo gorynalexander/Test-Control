@@ -1,4 +1,4 @@
-package com.onaft.testme.ui.profile
+package com.onaft.testme.ui.main.profile
 
 import androidx.lifecycle.ViewModelProviders
 import android.os.Bundle

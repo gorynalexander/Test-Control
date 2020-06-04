@@ -19,14 +19,14 @@
 
     <fragment
         android:id="@+id/fragment_lesson"
-        android:name="com.onaft.testme.ui.lesson.LessonFragment"
+        android:name="com.onaft.testme.ui.main.lesson.LessonFragment"
         android:label="Lesson" />
     <fragment
         android:id="@+id/fragment_archive"
-        android:name="com.onaft.testme.ui.archive.ArchiveFragment"
+        android:name="com.onaft.testme.ui.main.archive.ArchiveFragment"
         android:label="Archive" />
     <fragment
         android:id="@+id/fragment_profile"
-        android:name="com.onaft.testme.ui.profile.ProfileFragment"
+        android:name="com.onaft.testme.ui.main.profile.ProfileFragment"
         android:label="Profile" />
 </navigation>

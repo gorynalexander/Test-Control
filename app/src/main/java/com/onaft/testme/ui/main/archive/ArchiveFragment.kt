@@ -1,4 +1,4 @@
-package com.onaft.testme.ui.archive
+package com.onaft.testme.ui.main.archive
 
 import androidx.lifecycle.ViewModelProviders
 import android.os.Bundle

@@ -6,6 +6,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.navigation.fragment.findNavController
 import com.onaft.testme.R
 
 class MainFragment : Fragment() {
@@ -17,12 +18,14 @@ class MainFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         val view = inflater.inflate(R.layout.main_fragment, container, false)
+
         bindViews(view)
         initUI()
         return view
     }
 
     private fun bindViews(view: View) {
+
     }
 
     private fun initUI() {
