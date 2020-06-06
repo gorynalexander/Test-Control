@@ -21,4 +21,8 @@
     <string name="correct_answer_yes">Correct answer: Yes!</string>
     <string name="you_selected_no">You selected: No!</string>
     <string name="you_selected_yes">You selected: Yes!</string>
+    <string name="save">Save</string>
+    <string name="create_your_question">Create your question</string>
+    <string name="enter_your_question">Enter your question</string>
+    <string name="choose_correct_answer">Choose correct answer:</string>
 </resources>

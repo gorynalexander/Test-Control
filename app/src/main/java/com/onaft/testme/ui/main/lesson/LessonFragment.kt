@@ -8,9 +8,11 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.google.android.material.floatingactionbutton.FloatingActionButton
 import com.onaft.testme.R
 import com.onaft.testme.extentions.Extentions.visibleOrGone
 import com.onaft.testme.model.Task
+import com.onaft.testme.ui.main.create_task.CreateTaskBottomSheetDialog
 import com.onaft.testme.ui.main.lesson.adapter.TasksAdapter
 import java.util.ArrayList
 
@@ -21,6 +23,7 @@ class LessonFragment : Fragment() {
 
     private lateinit var rvTasks: RecyclerView
     private lateinit var lJoin: ViewGroup
+    private lateinit var fbCreate: FloatingActionButton
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -35,6 +38,7 @@ class LessonFragment : Fragment() {
     private fun bindView(view: View) {
         rvTasks = view.findViewById(R.id.rvTasks)
         lJoin = view.findViewById(R.id.lJoin)
+        fbCreate = view.findViewById(R.id.fbCreate)
     }
 
     private fun initView() {
@@ -49,6 +53,15 @@ class LessonFragment : Fragment() {
             this.adapter = adapter
         }
         adapter.updateTasks(getMockTaskList())
+
+        fbCreate.setOnClickListener {
+            activity?.let{
+                CreateTaskBottomSheetDialog().run {
+                    show(it.supportFragmentManager, tag)
+                }
+            }
+
+        }
     }
 
     private fun getMockTaskList(): ArrayList<Task> {

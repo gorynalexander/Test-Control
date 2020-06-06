@@ -36,5 +36,15 @@
             android:text="@string/join" />
     </LinearLayout>
 
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:layout_width="wrap_content"
+        android:id="@+id/fbCreate"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|end"
+        android:layout_marginBottom="50dp"
+        android:src="@drawable/ic_post_add_white_24dp"
+        android:layout_marginEnd="15dp"
+        android:layout_marginRight="15dp" />
+
 
 </FrameLayout>
