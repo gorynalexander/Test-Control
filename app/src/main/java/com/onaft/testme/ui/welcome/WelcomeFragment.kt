@@ -35,7 +35,7 @@ class WelcomeFragment : Fragment() {
 
         btnSignIn.setOnClickListener {
             // go to main fragment
-            findNavController().navigate(R.id.fragment_main)
+            findNavController().navigate(R.id.fragment_lesson)
         }
     }
 

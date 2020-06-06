@@ -6,27 +6,62 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import com.onaft.testme.R
+import com.onaft.testme.extentions.Extentions.visibleOrGone
+import com.onaft.testme.model.Task
+import com.onaft.testme.ui.main.lesson.adapter.TasksAdapter
+import java.util.ArrayList
 
 class LessonFragment : Fragment() {
 
-    companion object {
-        fun newInstance() = LessonFragment()
-    }
 
     private lateinit var viewModel: LessonViewModel
+
+    private lateinit var rvTasks: RecyclerView
+    private lateinit var lJoin: ViewGroup
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        return inflater.inflate(R.layout.lesson_fragment, container, false)
+        val view = inflater.inflate(R.layout.fragment_lesson, container, false)
+        bindView(view)
+        initView()
+        return view
+    }
+
+    private fun bindView(view: View) {
+        rvTasks = view.findViewById(R.id.rvTasks)
+        lJoin = view.findViewById(R.id.lJoin)
+    }
+
+    private fun initView() {
+        //todo
+        lJoin.visibleOrGone(false)
+        rvTasks.visibleOrGone(true)
+
+        val layoutManager = LinearLayoutManager(context)
+        val adapter = TasksAdapter()
+        rvTasks.apply {
+            this.layoutManager = layoutManager
+            this.adapter = adapter
+        }
+        adapter.updateTasks(getMockTaskList())
+    }
+
+    private fun getMockTaskList(): ArrayList<Task> {
+        return arrayListOf(
+            Task("Is val variable in Kotlin mutable?", false),
+            Task("The best way to create model class is to use 'data class'", true),
+            Task("For better memory performance you should use LiveData with viewLifeCycleOwner", true)
+        )
     }
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
         viewModel = ViewModelProviders.of(this).get(LessonViewModel::class.java)
-        // TODO: Use the ViewModel
     }
 
 }

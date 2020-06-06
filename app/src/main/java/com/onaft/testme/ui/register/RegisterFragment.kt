@@ -19,7 +19,7 @@ class RegisterFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        val view = inflater.inflate(R.layout.register_fragment, container, false)
+        val view = inflater.inflate(R.layout.fragment_register, container, false)
         bindViews(view)
         initUI()
         return view
@@ -27,7 +27,7 @@ class RegisterFragment : Fragment() {
 
     private fun initUI() {
         btnSignIn.setOnClickListener {
-            findNavController().navigate(R.id.fragment_main)
+            findNavController().navigate(R.id.fragment_lesson)
         }
     }
 

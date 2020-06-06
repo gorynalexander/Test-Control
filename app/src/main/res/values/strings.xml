@@ -11,4 +11,14 @@
     <string name="lesson">Lesson</string>
     <string name="archive">Archive</string>
     <string name="profile">Profile</string>
+    <string name="join_text">Please join the lesson by QR code</string>
+    <string name="no_tasks">There are no tasks in archive</string>
+    <string name="join">Join</string>
+    <string name="yes">Yes!</string>
+    <string name="no">No!</string>
+    <string name="don_t_know">Don\'t know</string>
+    <string name="question">Question:</string>
+    <string name="correct_answer_yes">Correct answer: Yes!</string>
+    <string name="you_selected_no">You selected: No!</string>
+    <string name="you_selected_yes">You selected: Yes!</string>
 </resources>

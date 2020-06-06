@@ -28,7 +28,7 @@
                 app:layout_scrollFlags="scroll|enterAlways" />
         </com.google.android.material.appbar.AppBarLayout>
 
-        <RelativeLayout xmlns:tools="http://schemas.android.com/tools"
+        <LinearLayout xmlns:tools="http://schemas.android.com/tools"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:background="@color/backgroundColor"
@@ -44,29 +44,20 @@
                 android:layout_height="match_parent"
                 android:layout_marginBottom="50dp"
                 android:paddingBottom="50dp"/>
-            <!--            <FrameLayout-->
-            <!--                android:id="@+id/container"-->
-            <!--                android:layout_width="match_parent"-->
-            <!--                android:layout_height="match_parent"-->
-            <!--                android:visibility="gone"-->
-            <!--                android:orientation="vertical"-->
-            <!--                android:paddingBottom="50dp" />-->
 
 
-        </RelativeLayout>
+        </LinearLayout>
 
     </androidx.coordinatorlayout.widget.CoordinatorLayout>
 
-<!--    <com.google.android.material.bottomnavigation.BottomNavigationView-->
-<!--        android:id="@+id/bottom_navigation"-->
-<!--        android:layout_width="match_parent"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        android:layout_alignParentBottom="true"-->
-<!--&lt;!&ndash;        android:theme="@style/Widget.BottomNavigationView"&ndash;&gt;-->
-<!--        android:background="@color/colorPrimary"-->
-<!--&lt;!&ndash;        app:itemIconTint="@drawable/bottom_navigation_colors"&ndash;&gt;-->
-<!--&lt;!&ndash;        app:itemTextColor="@drawable/bottom_navigation_colors"&ndash;&gt;-->
-<!--        app:menu="@menu/navigation" -->
-<!--    />-->
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottom_navigation"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/colorPrimary"
+        android:layout_alignParentBottom="true"
+        app:itemIconTint="@drawable/bottom_navigation_colors"
+        app:itemTextColor="@drawable/bottom_navigation_colors"
+        app:menu="@menu/navigation" />
 </RelativeLayout>
 
