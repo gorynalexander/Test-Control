@@ -25,4 +25,5 @@
     <string name="create_your_question">Create your question</string>
     <string name="enter_your_question">Enter your question</string>
     <string name="choose_correct_answer">Choose correct answer:</string>
+    <string name="details">Details</string>
 </resources>

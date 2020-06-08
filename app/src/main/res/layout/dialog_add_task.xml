@@ -28,6 +28,7 @@
             <com.google.android.material.textfield.TextInputEditText
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:id="@+id/etQuestion"
                 android:fontFamily="@font/avenir_next_medium"
                 android:hint="@string/enter_your_question"
                 android:textColor="@android:color/black"

@@ -5,12 +5,12 @@
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
 
-    <androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:app="http://schemas.android.com/apk/res-auto"
-        android:id="@+id/coordinator"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:fitsSystemWindows="true">
+<!--    <androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"-->
+<!--        xmlns:app="http://schemas.android.com/apk/res-auto"-->
+<!--        android:id="@+id/coordinator"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="match_parent"-->
+<!--        android:fitsSystemWindows="true">-->
 
 
         <com.google.android.material.appbar.AppBarLayout
@@ -24,8 +24,7 @@
                 android:layout_height="?attr/actionBarSize"
                 android:background="?attr/colorPrimary"
                 app:title="@string/app_name"
-                app:titleTextColor="@color/backgroundColor"
-                app:layout_scrollFlags="scroll|enterAlways" />
+                app:titleTextColor="@color/backgroundColor" />
         </com.google.android.material.appbar.AppBarLayout>
 
         <LinearLayout xmlns:tools="http://schemas.android.com/tools"
@@ -42,13 +41,14 @@
                 android:id="@+id/nav_host_fragment"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
+                android:layout_marginTop="50dp"
                 android:layout_marginBottom="50dp"
                 android:paddingBottom="50dp"/>
 
 
         </LinearLayout>
 
-    </androidx.coordinatorlayout.widget.CoordinatorLayout>
+<!--    </androidx.coordinatorlayout.widget.CoordinatorLayout>-->
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/bottom_navigation"

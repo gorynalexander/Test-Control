@@ -5,6 +5,7 @@ import android.os.Bundle
 import androidx.navigation.findNavController
 import androidx.navigation.ui.setupWithNavController
 import com.google.android.material.bottomnavigation.BottomNavigationView
+import com.onaft.testme.AppData
 import com.onaft.testme.R
 import com.onaft.testme.extentions.Extentions.visibleOrGone
 
@@ -17,6 +18,8 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
         initView()
         setupNavigation()
+
+        AppData.updateRole(isStudent = false)
     }
 
     private fun initView() {

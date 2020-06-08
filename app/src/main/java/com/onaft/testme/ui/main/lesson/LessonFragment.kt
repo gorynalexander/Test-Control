@@ -2,6 +2,7 @@ package com.onaft.testme.ui.main.lesson
 
 import androidx.lifecycle.ViewModelProviders
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -9,6 +10,13 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.google.android.material.floatingactionbutton.FloatingActionButton
+import com.google.firebase.database.ChildEventListener
+import com.google.firebase.database.DataSnapshot
+import com.google.firebase.database.DatabaseError
+import com.google.firebase.database.DatabaseReference
+import com.google.firebase.database.ktx.database
+import com.google.firebase.ktx.Firebase
+import com.onaft.testme.AppData
 import com.onaft.testme.R
 import com.onaft.testme.extentions.Extentions.visibleOrGone
 import com.onaft.testme.model.Task
@@ -24,6 +32,8 @@ class LessonFragment : Fragment() {
     private lateinit var rvTasks: RecyclerView
     private lateinit var lJoin: ViewGroup
     private lateinit var fbCreate: FloatingActionButton
+    private lateinit var database: DatabaseReference
+    private var tasksAdapter: TasksAdapter? = null
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -31,7 +41,10 @@ class LessonFragment : Fragment() {
     ): View? {
         val view = inflater.inflate(R.layout.fragment_lesson, container, false)
         bindView(view)
-        initView()
+        initUI()
+        database = Firebase.database.getReference("/tasks/")
+
+        listenFirebaseUpdates()
         return view
     }
 
@@ -41,18 +54,19 @@ class LessonFragment : Fragment() {
         fbCreate = view.findViewById(R.id.fbCreate)
     }
 
-    private fun initView() {
+    private fun initUI() {
         //todo
         lJoin.visibleOrGone(false)
         rvTasks.visibleOrGone(true)
+        fbCreate.visibleOrGone(!AppData.isStudent)
 
         val layoutManager = LinearLayoutManager(context)
-        val adapter = TasksAdapter()
+        tasksAdapter = TasksAdapter()
         rvTasks.apply {
             this.layoutManager = layoutManager
-            this.adapter = adapter
+            this.adapter = tasksAdapter
         }
-        adapter.updateTasks(getMockTaskList())
+//        tasksAdapter?.updateTasks(getMockTaskList())
 
         fbCreate.setOnClickListener {
             activity?.let{
@@ -75,6 +89,31 @@ class LessonFragment : Fragment() {
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
         viewModel = ViewModelProviders.of(this).get(LessonViewModel::class.java)
+    }
+
+    private fun listenFirebaseUpdates(){
+
+        database.addChildEventListener(object: ChildEventListener{
+            override fun onCancelled(p0: DatabaseError) {
+            }
+
+            override fun onChildMoved(p0: DataSnapshot, p1: String?) {
+            }
+
+            override fun onChildChanged(p0: DataSnapshot, p1: String?) {
+            }
+
+            override fun onChildAdded(snapshot: DataSnapshot, p1: String?) {
+                val task = snapshot.getValue(Task::class.java)
+                Log.i("TEST_TASK", task.toString())
+                task?.let{
+                    tasksAdapter?.addTask(it)
+                }
+            }
+
+            override fun onChildRemoved(p0: DataSnapshot) {
+            }
+        })
     }
 
 }

@@ -6,7 +6,9 @@ import android.view.ViewGroup
 import android.widget.Button
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
+import com.onaft.testme.AppData
 import com.onaft.testme.R
+import com.onaft.testme.extentions.Extentions.visibleOrGone
 import com.onaft.testme.model.Task
 
 class TasksAdapter : RecyclerView.Adapter<TasksAdapter.ViewHolder>() {
@@ -31,13 +33,25 @@ class TasksAdapter : RecyclerView.Adapter<TasksAdapter.ViewHolder>() {
         notifyDataSetChanged()
     }
 
+    fun addTask(task: Task) {
+        tasks.add(task)
+        notifyDataSetChanged()
+    }
+
     class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         val tvQuestion: TextView = itemView.findViewById(R.id.tvQuestion)
         val btnYes: Button = itemView.findViewById(R.id.btnYes)
         val btnNo: Button = itemView.findViewById(R.id.btnNo)
         val btnDontKnow: Button = itemView.findViewById(R.id.btnDontKnow)
+
+        val lDetails: ViewGroup = itemView.findViewById(R.id.lDetails)
+        val lAnswers: ViewGroup = itemView.findViewById(R.id.lAnswers)
+
         fun bind(task: Task) {
             tvQuestion.text = task.question
+
+            lDetails.visibleOrGone(!AppData.isStudent)
+            lAnswers.visibleOrGone(AppData.isStudent)
         }
     }
 
