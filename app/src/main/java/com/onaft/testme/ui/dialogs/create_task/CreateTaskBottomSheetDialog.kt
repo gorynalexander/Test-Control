@@ -1,4 +1,4 @@
-package com.onaft.testme.ui.main.create_task
+package com.onaft.testme.ui.dialogs.create_task
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -33,7 +33,6 @@ class CreateTaskBottomSheetDialog : BottomSheetDialogFragment() {
         val view = inflater.inflate(R.layout.dialog_add_task, container, false)
         bindView(view)
         initUI()
-
         database = Firebase.database.reference
         return view
     }

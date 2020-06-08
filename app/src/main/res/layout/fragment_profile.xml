@@ -37,7 +37,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/avenir_next_italic"
-                android:text="Ivanov Ivan Ivanovich"
+                android:text="Ivan Ivanov"
                 android:textColor="@android:color/black"
                 android:textSize="18sp" />
 
@@ -61,7 +61,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/avenir_next_italic"
-                android:text="333A"
+                android:text="333"
                 android:textColor="@android:color/black"
                 android:textSize="18sp" />
 
@@ -85,7 +85,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/avenir_next_italic"
-                android:text="20"
+                android:text="3"
                 android:textColor="@android:color/black"
                 android:textSize="18sp" />
 
@@ -110,7 +110,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/avenir_next_italic"
-                android:text="17"
+                android:text="3"
                 android:textColor="@android:color/black"
                 android:textSize="18sp" />
 

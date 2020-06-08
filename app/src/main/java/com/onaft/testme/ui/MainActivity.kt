@@ -19,7 +19,7 @@ class MainActivity : AppCompatActivity() {
         initView()
         setupNavigation()
 
-        AppData.updateRole(isStudent = false)
+        AppData.updateRole(isStudent = true)
     }
 
     private fun initView() {

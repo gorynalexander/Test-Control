@@ -28,13 +28,30 @@ class TasksAdapter : RecyclerView.Adapter<TasksAdapter.ViewHolder>() {
         holder.bind(task)
     }
 
-    fun updateTasks(tasks: ArrayList<Task>) {
-        this.tasks = tasks
-        notifyDataSetChanged()
-    }
 
     fun addTask(task: Task) {
         tasks.add(task)
+        notifyDataSetChanged()
+    }
+
+    fun updateTask(task: Task) {
+        tasks.forEachIndexed { index, it ->
+            if (it.question == task.question) {
+                tasks.removeAt(index)
+                tasks.add(index, task)
+                notifyItemChanged(index)
+            }
+        }
+        notifyDataSetChanged()
+    }
+
+    fun removeTask(task: Task) {
+        tasks.forEachIndexed { index, it ->
+            if (it.question == task.question) {
+                tasks.removeAt(index)
+                notifyItemRemoved(index)
+            }
+        }
         notifyDataSetChanged()
     }
 

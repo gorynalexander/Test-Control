@@ -26,4 +26,6 @@
     <string name="enter_your_question">Enter your question</string>
     <string name="choose_correct_answer">Choose correct answer:</string>
     <string name="details">Details</string>
+    <string name="confirm_password">Confirm password</string>
+    <string name="create_lesson">Create lesson</string>
 </resources>
